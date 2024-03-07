@@ -6,7 +6,7 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 10:56:45 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/07 12:25:53 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/07 14:15:34 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,19 @@
 # define DOWN_ARROW_KEY 65364
 # define ESC_KEY 65307
 
-typedef struct s_map
+typedef struct s_game
 {
+	char	**map;
+	int	player_pos;
+	int	img_size;
+	int	error_flag;
+	int	coins;
+	int	raw_size;
+	int	moves;
+	int	num_of_raws;
+	int	exit_num;
+	int	players;
 
-}
+} t_game;
 
 #endif
