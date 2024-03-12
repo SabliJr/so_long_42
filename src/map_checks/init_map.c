@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   init_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/07 10:40:45 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/12 13:25:12 by sabakar-         ###   ########.fr       */
+/*   Created: 2024/03/12 13:03:21 by sabakar-          #+#    #+#             */
+/*   Updated: 2024/03/12 13:18:26 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "so_long.h"
 
-int main(int argc, char *argv[]) 
+void initiaize_map (t_data *data)
 {
-    t_data data;
-    if (argc != 2)
-        ft_printf("\e[31mError: please provide a map \e0m]\n");
-
-    initiaize_map (&data);
-    create_map(&data, argv[1]);
+    data->j = 0;
+    data->i = 0;
+    data->steps_count = 0;
+    data->map.can_exit = 0;
+    data->map.collected = 0;
+    data->map.count_c = 0;
+    data->map.exit_count = 0;
+    data->map.players_count = 0;
+    data->img.height = IMG_SIZE;
+    data->img.width = IMG_SIZE;
+    data->win_height = data->map.line_count * IMG_SIZE;
+    data->win_width = (ft_strlen(data->map.map[0] - 1) * IMG_SIZE);
 }
