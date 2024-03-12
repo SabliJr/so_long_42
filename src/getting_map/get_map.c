@@ -6,7 +6,7 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 11:45:53 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/12 12:54:59 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/12 19:45:14 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int get_map_lines_num (char *path)
             free(line);
             line = get_next_line(fd);
         }
-        close(path);
+        close(fd);
     }
     return (line_count);
 }
