@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sabakar- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 11:23:24 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/06 18:27:09 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/12 10:44:01 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line_bonuc.h"
+#include "get_next_line_bonus.h"
 
 char	*ft_get_what_left(char *str)
 {
