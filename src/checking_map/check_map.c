@@ -6,13 +6,13 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 19:29:43 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/12 22:29:38 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/13 08:18:12 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "so_long.h"
 
-int check_top(int row, char **map)
+int check_top_bottom(int row, char **map)
 {
     int i;
 
@@ -54,8 +54,8 @@ int check_edges(int line_count, char **map)
     int x;
 
     x = 0;
-    if (check_top(0, map) == FAILURE
-        || (check_top(line_count, map) == FAILURE))
+    if (check_top_bottom(0, map) == FAILURE
+        || (check_top_bottom(line_count, map) == FAILURE))
         return (FAILURE);
     while (x < line_count)
     {
