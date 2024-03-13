@@ -6,7 +6,7 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 10:56:45 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/12 22:40:47 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/13 08:24:34 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,6 @@ typedef struct s_map
 	char	*path;
 	size_t	line_len;
 	int	can_exit;
-
 } t_map;
 
 typedef struct s_img
@@ -121,7 +120,7 @@ int check_map(t_data *data);
 int check_recrtangel(t_data *data);
 int check_edges(int line_count, char **map);
 int check_letters(t_data *data);
-int check_top(int row, char **map);
+int check_top_bottom(int row, char **map);
 int check_extention(char *path);
 
 #endif
