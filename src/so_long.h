@@ -6,7 +6,7 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 10:56:45 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/13 08:24:34 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/13 10:45:17 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ typedef struct s_data
 } t_data;
 
 // Paarsing the map;
-void initiaize_map (t_data *data);
+void init_map (t_data *data);
 void	create_map(t_data *data, char *path);
 
 // Checking the map;

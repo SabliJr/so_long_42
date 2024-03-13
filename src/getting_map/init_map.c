@@ -6,13 +6,13 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 13:03:21 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/12 13:18:26 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/13 10:11:46 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "so_long.h"
 
-void initiaize_map (t_data *data)
+void init_map (t_data *data)
 {
     data->j = 0;
     data->i = 0;

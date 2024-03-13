@@ -1,61 +1,26 @@
-PRINT_F = ../libs/ft_printf/ft_printf.c \
-			../libs/ft_printf/ft_putnbr_unsigned.c \
-			../libs/ft_printf/ft_putptr.c \
-			../libs/ft_printf/ft_utilities.c \
-			../libs/ft_printf/ft_puthex.c
+NAME = so_long
 
-SO_LONG = so_long.c
+PRINT_F_DIR = ../libs/libft
+LIBFT_DIR = ../libs/libft
+GNL_DIR = ../libs/get_next_line
 
-LIBC = ../libs/libft/ft_atoi.c \
-		../libs/libft/ft_itoa.c \
-		../libs/libft/ft_putendl_fd.c \
-		../libs/libft/ft_strlcat.c \
-		../libs/libft/ft_substr.c \
-		../libs/libft/ft_bzero.c \
-		../libs/libft/ft_putnbr_fd.c \
-		../libs/libft/ft_strlcpy.c \
-		../libs/libft/ft_tolower.c \
-		../libs/libft/ft_calloc.c \
-		../libs/libft/ft_memchr.c \
-		../libs/libft/ft_putstr_fd.c \
-		../libs/libft/ft_strlen.c \
-		../libs/libft/ft_toupper.c \
-		../libs/libft/ft_isalnum.c \
-		../libs/libft/ft_memcmp.c \
-		../libs/libft/ft_split.c \
-		../libs/libft/ft_strmapi.c \
-		../libs/libft/ft_isalpha.c \
-		../libs/libft/ft_memcpy.c \
-		../libs/libft/ft_strncmp.c \
-		../libs/libft/ft_isascii.c \
-		../libs/libft/ft_memmove.c \
-		../libs/libft/ft_strdup.c \
-		../libs/libft/ft_strnstr.c \
-		../libs/libft/ft_isdigit.c \
-		../libs/libft/ft_memset.c \
-		../libs/libft/ft_striteri.c \
-		../libs/libft/ft_strrchr.c \
-		../libs/libft/ft_isprint.c \
-		../libs/libft/ft_putchar_fd.c \
-		../libs/libft/ft_strtrim.c
+SO_LONG = so_long.c \
+			checking_map/check_map.c \
+			checking_map/check_map_extension.c \
+			checking_map/print_err_msg.c \
+			getting_map/get_map.c \
+			getting_map/init_map.c \
+			getting_map/init_player.c
 
-BONUS = ../libs/libft/ft_lstadd_front_bonus.c \
-		../libs/libft/ft_lstclear_bonus.c \
-		../libs/libft/ft_lstiter_bonus.c \
-		../libs/libft/ft_lstlast_bonus.c \
-		../libs/libft/ft_lstdelone_bonus.c \
-		../libs/libft/ft_lstsize_bonus.c \
-		../libs/libft/ft_lstadd_back_bonus.c \
-		../libs/libft/ft_lstnew_bonus.c \
-		../libs/libft/ft_lstmap_bonus.c
+GNL = ${GNL_DIR}/get_next_line.c \
+		${GNL_DIR}/get_next_line_utils.c
 
-SRCS = ${LIBC} ${PRINT_F} ${SO_LONG} ${BONUS}
+
+SRCS = ${LIBFT_DIR} ${PRINT_F_DIR} ${SO_LONG} ${GNL}
 
 OBJS = ${SRCS:.c=.o}
-NAME = libsolong.a
 
 CC = cc
-
 CFLAGES = -Wall -Wextra -Werror
 
 .c.o:
@@ -63,6 +28,9 @@ CFLAGES = -Wall -Wextra -Werror
 
 $(NAME): ${OBJS}
 	ar -rsc $(NAME) $(OBJS)
+	make -C ${LIBFT_DIR}
+	make -C ${PRINT_F_DIR}
+
 
 all: $(NAME)
 
