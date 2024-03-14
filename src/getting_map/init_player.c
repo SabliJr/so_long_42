@@ -6,32 +6,31 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 19:21:38 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/12 19:29:11 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/13 14:59:24 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "so_long.h"
+#include "so_long.h"
 
-void    init_player (t_data *data)
+void	init_player(t_data *data)
 {
-    int x;
-    int y;
+	int x;
+	int y;
 
-    x = 0;
-    y = 0;
-    while (data->map.map[x])
-    {
-        while (data->map.map[x][y])
-        {
-            if (data->map.map[x][y] == 'P')
-            {
-                data->p_i = x;
-                data->p_j = y;
-            }
-            y++;
-        }
-        y = 0;
-        x++;
-    }
-    
+	x = 0;
+	y = 0;
+	while (data->map.map[x])
+	{
+		while (data->map.map[x][y])
+		{
+			if (data->map.map[x][y] == 'P')
+			{
+				data->p_i = x;
+				data->p_j = y;
+			}
+			y++;
+		}
+		y = 0;
+		x++;
+	}
 }
