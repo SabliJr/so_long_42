@@ -22,7 +22,7 @@ SRCS = ${SO_LONG} ${GNL}
 OBJS = ${SRCS:.c=.o}
 
 CC = cc
-CFLAGES = -Wall -Wextra -Werror -I${HEADER}
+CFLAGES = -Wall -Wextra -Werror -I${HEADER} -g3
 
 .c.o:
 	${CC} ${CFLAGES} -c $< -o ${<:.c=.o}

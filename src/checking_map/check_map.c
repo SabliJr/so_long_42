@@ -6,11 +6,11 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 19:29:43 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/13 14:58:16 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/14 22:29:24 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../../include/so_long.h"
 
 int	check_top_bottom(int row, char **map)
 {
@@ -28,12 +28,18 @@ int	check_top_bottom(int row, char **map)
 
 int	check_letters(t_data *data)
 {
+	int	count_p;
+
+	count_p = 0;
 	while (data->map.map[data->i])
 	{
 		while (data->map.map[data->i][data->j])
 		{
 			if (data->map.map[data->i][data->j] == 'P')
+			{
 				data->map.players_count++;
+				count_p++;
+			}
 			else if (data->map.map[data->i][data->j] == 'C')
 				data->map.count_c++;
 			else if (data->map.map[data->i][data->j] == 'E')
@@ -43,6 +49,8 @@ int	check_letters(t_data *data)
 		data->j = 0;
 		data->i++;
 	}
+	if (data->map.players_count > 1)
+		return (data->map.players_count);
 	if (!data->map.can_exit || !data->map.players_count || !data->map.count_c)
 		return (FAILURE);
 	else
@@ -88,29 +96,32 @@ int	check_rectangle(t_data *data)
 
 int	check_map(t_data *data)
 {
-	int		x;
-	size_t	y;
+	int	x;
+	int	y;
+	int	len;
 
 	x = 0;
-	y = 0;
 	while (data->map.map[x])
 	{
-		while (y < ft_strlen(data->map.map[x] - 1))
+		y = 0;
+		len = ft_strlen(data->map.map[x]);
+		while (y < len - 1)
 		{
 			if (ft_strchr("01CEP", data->map.map[x][y]) == NULL)
-				error_msg(OTHER_ERR, data);
+				error_msg(OTHER_ERR);
 			y++;
 		}
-		y = 0;
 		x++;
 	}
-	if (check_letters(data) == FAILURE)
-		error_msg(CHARS_ERR, data);
-	if (data->map.players_count > 1)
-		error_msg(PLAYER_ERR, data);
-	if (check_rectangle(data) == FAILURE)
-		error_msg(NOT_REC_ERR, data);
 	if (check_edges(data->map.line_count - 1, data->map.map) == FAILURE)
-		error_msg(EDGES_ERR, data);
+		error_msg(EDGES_ERR);
+	if (check_extention(data->map.path) == FAILURE)
+		error_msg(BER_ERR);
+	if (check_letters(data) == FAILURE)
+		error_msg(CHARS_ERR);
+	else
+		error_msg(PLAYER_ERR);
+	if (check_rectangle(data) == FAILURE)
+		error_msg(NOT_REC_ERR);
 	return (SUCCESS);
 }
