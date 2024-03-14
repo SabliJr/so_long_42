@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sabakar- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 14:10:30 by sabakar-          #+#    #+#             */
-/*   Updated: 2023/12/11 11:42:07 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/14 19:06:43 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 #  define BUFFER_SIZE 1000
 # endif
 
-size_t	ft_strlen(const char *str);
+size_t	ft_strlen(char *str);
 char	*get_next_line(int fd);
 char	*ft_read_file(int fd, char *lines);
 char	*ft_get_line(char *lines);

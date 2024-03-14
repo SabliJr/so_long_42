@@ -6,11 +6,11 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 13:03:21 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/13 14:59:20 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/14 18:50:39 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../../include/so_long.h"
 
 void	init_map(t_data *data)
 {
