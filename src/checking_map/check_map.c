@@ -6,11 +6,17 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 19:29:43 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/14 22:29:24 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/15 12:06:36 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
+
+int	return_res(t_data *data);
+int	check_top_bottom(int row, char **map);
+int	check_letters(t_data *data);
+int	check_edges(int line_count, char **map);
+int	check_map(t_data *data);
 
 int	check_top_bottom(int row, char **map)
 {
@@ -50,8 +56,10 @@ int	check_letters(t_data *data)
 		data->i++;
 	}
 	if (data->map.players_count > 1)
-		return (data->map.players_count);
-	if (!data->map.can_exit || !data->map.players_count || !data->map.count_c)
+		return (2);
+	if (data->map.exit_count > 1)
+		return (3);
+	if (!data->map.exit_count || !data->map.players_count || !data->map.count_c)
 		return (FAILURE);
 	else
 		return (SUCCESS);
@@ -59,36 +67,18 @@ int	check_letters(t_data *data)
 
 int	check_edges(int line_count, char **map)
 {
-	int	x;
+	int	i;
+	int	line_len;
 
-	x = 0;
-	if (check_top_bottom(0, map) == FAILURE || (check_top_bottom(line_count,
-				map) == FAILURE))
+	i = 1;
+	if (check_top_bottom(0, map) == FAILURE || check_top_bottom(line_count,
+			map) == FAILURE)
 		return (FAILURE);
-	while (x < line_count)
+	while (i < line_count)
 	{
-		if (map[x][0] != '1' || map[x][ft_strlen(map[0]) - 2] != '1')
+		line_len = ft_strlen(map[0] - 2);
+		if (map[i][0] != '1' || map[i][line_len] != '1')
 			return (FAILURE);
-		x++;
-	}
-	return (SUCCESS);
-}
-
-int	check_rectangle(t_data *data)
-{
-	int		i;
-	size_t	j;
-
-	i = 0;
-	j = 0;
-	data->map.line_len = ft_strlen(data->map.map[i] - 1);
-	while (data->map.map[i])
-	{
-		while (data->map.map[i][j] && data->map.map[i][j] != '\n')
-			j++;
-		if (j != data->map.line_len)
-			return (FAILURE);
-		j = 0;
 		i++;
 	}
 	return (SUCCESS);
@@ -113,14 +103,21 @@ int	check_map(t_data *data)
 		}
 		x++;
 	}
+	return (return_res(data));
+}
+
+int	return_res(t_data *data)
+{
 	if (check_edges(data->map.line_count - 1, data->map.map) == FAILURE)
 		error_msg(EDGES_ERR);
 	if (check_extention(data->map.path) == FAILURE)
 		error_msg(BER_ERR);
 	if (check_letters(data) == FAILURE)
 		error_msg(CHARS_ERR);
-	else
+	if (check_letters(data) == 2)
 		error_msg(PLAYER_ERR);
+	if (check_letters(data) == 3)
+		error_msg(MULITPULE_EXITS_ERR);
 	if (check_rectangle(data) == FAILURE)
 		error_msg(NOT_REC_ERR);
 	return (SUCCESS);
