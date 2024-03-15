@@ -6,7 +6,7 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 10:56:45 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/14 20:33:56 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/15 12:15:46 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,10 @@
 # define PLAYERB_ERR "There can be only one player on each side...\n"
 # define NOT_REC_ERR "The map is not a rectangle.\n"
 # define EDGES_ERR "This is an invlaid map. The edges of the map are not correct (must be walls -1-)\n"
+# define MULITPULE_EXITS_ERR "This map has multipule exits, therefor it's invalid!\n"
+# define PLAYER_TRAPPED_ERR "The player can't move, it trapped between the walls. Another map please!\n"
+# define NO_WAY_TO_COLLECTABLES "There's no way to access all collectables, some of them closed by walls!\n"
+# define NO_WAY_TO_EXIT "There's no way to exit, the port is closed by walls!\n"
 
 // Colors;
 # define RED "\033[0;31m"
@@ -103,6 +107,13 @@ typedef struct s_data
 	t_map map;
 } t_data;
 
+typedef struct s_algo
+{
+	int collectable;
+	int exit;
+} t_algo;
+
+
 // Paarsing the map;
 void init_map (t_data *data);
 void	create_map(t_data *data, char *path);
@@ -116,7 +127,7 @@ void    init_player (t_data *data);
 int get_map_lines_num (char *path);
 void    get_input_in_map(int row, size_t cloumn, int x, t_data *data);
 int check_map(t_data *data);
-int check_recrtangel(t_data *data);
+int check_rectangle(t_data *data);
 int check_edges(int line_count, char **map);
 int check_letters(t_data *data);
 int check_top_bottom(int row, char **map);
