@@ -6,26 +6,15 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 11:45:53 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/14 18:50:35 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/15 16:20:22 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-// void	ft_free(char **arr)
-// {
-// 	size_t	k;
-
-// 	k = 0;
-// 	while (arr[k] != NULL)
-// 	{
-// 		free(arr);
-// 		k++;
-// 	}
-// 	free(arr);
-// 	arr = NULL;
-// 	return ;
-// }
+int	get_map_lines_num(char *path);
+void	get_input_in_map(int row, size_t cloumn, int x, t_data *data);
+void	create_map(t_data *data, char *path);
 
 int	get_map_lines_num(char *path)
 {

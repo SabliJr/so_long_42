@@ -6,7 +6,7 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 19:47:14 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/15 12:07:21 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/15 18:59:57 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ int	check_rectangle(t_data *data);
 
 int	check_extention(char *path)
 {
-	int fd;
-	size_t path_len;
+	int		fd;
+	size_t	path_len;
 
 	path_len = ft_strlen(path);
 	if (open(path, O_DIRECTORY) >= 0)
@@ -45,19 +45,19 @@ int	check_extention(char *path)
 
 int	check_rectangle(t_data *data)
 {
-	int		i;
-	size_t	j;
+    int i;
+    size_t j;
 
-	i = 0;
-	data->map.line_len = ft_strlen(data->map.map[i] - 1);
-	while (data->map.map[i])
-	{
-		j = 0;
-		while (data->map.map[i][j] && data->map.map[i][j] != '\n')
-			j++;
-		if (j != data->map.line_len)
-			return (FAILURE);
-		i++;
-	}
-	return (SUCCESS);
+    i = 0;
+    data->map.line_len = ft_strlen(data->map.map[i]) - 1;
+    while (data->map.map[i])
+    {
+        j = 0;
+        while (data->map.map[i][j])
+            j++;
+        if (j != data->map.line_len)
+            return (FAILURE);
+        i++;
+    }
+    return (SUCCESS);
 }

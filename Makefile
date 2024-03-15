@@ -7,11 +7,13 @@ HEADER = ./include
 
 SO_LONG = src/so_long.c \
 			src/checking_map/check_map.c \
-			src/checking_map/check_map_extension.c \
+			src/checking_map/check_map_f2.c \
 			src/checking_map/print_err_msg.c \
 			src/getting_map/get_map.c \
 			src/getting_map/init_map.c \
-			src/getting_map/init_player.c
+			src/getting_map/init_player.c \
+			src/checking_map/map_check_algo.c \
+			src/checking_map/map_utils.c 
 
 GNL = ${GNL_DIR}/get_next_line.c \
 		${GNL_DIR}/get_next_line_utils.c
