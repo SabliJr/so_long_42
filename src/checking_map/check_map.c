@@ -6,7 +6,7 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 19:29:43 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/15 12:06:36 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/15 16:46:32 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,6 +118,8 @@ int	return_res(t_data *data)
 		error_msg(PLAYER_ERR);
 	if (check_letters(data) == 3)
 		error_msg(MULITPULE_EXITS_ERR);
+	if (la_algo(data, data->map.count_c) == FAILURE)
+		error_msg(MAP_NOT_SOLVABLE);
 	if (check_rectangle(data) == FAILURE)
 		error_msg(NOT_REC_ERR);
 	return (SUCCESS);

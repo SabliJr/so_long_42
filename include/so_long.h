@@ -6,7 +6,7 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 10:56:45 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/15 12:15:46 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/15 16:28:25 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@
 # define PLAYER_TRAPPED_ERR "The player can't move, it trapped between the walls. Another map please!\n"
 # define NO_WAY_TO_COLLECTABLES "There's no way to access all collectables, some of them closed by walls!\n"
 # define NO_WAY_TO_EXIT "There's no way to exit, the port is closed by walls!\n"
+# define MAP_NOT_SOLVABLE "This map is not solvable!\n"
 
 // Colors;
 # define RED "\033[0;31m"
@@ -123,13 +124,22 @@ int check_extention(char *path);
 
 void    error_msg(char *str);
 void    init_player (t_data *data);
-// void ft_free(char **arr);
-int get_map_lines_num (char *path);
-void    get_input_in_map(int row, size_t cloumn, int x, t_data *data);
-int check_map(t_data *data);
+void ft_free(char **arr);
 int check_rectangle(t_data *data);
-int check_edges(int line_count, char **map);
-int check_letters(t_data *data);
-int check_top_bottom(int row, char **map);
+int	get_map_lines_num(char *path);
+void	get_input_in_map(int row, size_t cloumn, int x, t_data *data);
+
+char	*ft_strdup(char *s);
+char	**map_copy(char **map);
+t_algo	*algo_int(int collect_num);
+void	player_pos(t_data *data);
+int	map_path_checker(char **map, int i, int x, t_algo *algo);
+
+int	return_res(t_data *data);
+int	check_top_bottom(int row, char **map);
+int	check_letters(t_data *data);
+int	check_edges(int line_count, char **map);
+int	check_map(t_data *data);
+int	la_algo(t_data *data, int collect_num);
 
 #endif
