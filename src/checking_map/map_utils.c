@@ -6,7 +6,7 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 16:19:19 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/15 16:29:35 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/16 14:36:55 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_strdup(char *s)
 
 void	ft_free(char **arr)
 {
-	size_t	k;
+	size_t k;
 
 	k = 0;
 	while (arr[k] != NULL)

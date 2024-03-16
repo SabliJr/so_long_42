@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sabakar- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 10:08:56 by sabakar-          #+#    #+#             */
-/*   Updated: 2023/11/29 15:40:22 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/16 14:37:59 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
+# include <stdarg.h>
+# include <stdint.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdarg.h>
-# include <stdint.h>
 
 int		ft_printf(const char *str, ...);
 int		ft_putpercentage(void);
