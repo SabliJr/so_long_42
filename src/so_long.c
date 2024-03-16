@@ -6,7 +6,7 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 10:40:45 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/15 18:50:12 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/15 22:19:28 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(int argc, char *argv[])
 	// char *argv[3];
 
 	// char *bs = "bullshit";
-	// char *map = "../maps/invalid/very_long.ber";
+	// char *map = "../maps/invalid/invaild_width.ber";
 	
 	// argv[0] = bs;
 	// argv[1] = map;
@@ -31,6 +31,5 @@ int	main(int argc, char *argv[])
 	create_map(&data, argv[1]);
 	init_map(&data);
 	check_map(&data);
-	printf("We are here!");
 	init_player(&data);
 }

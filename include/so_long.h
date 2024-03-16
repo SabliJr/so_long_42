@@ -6,7 +6,7 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 10:56:45 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/15 16:28:25 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/15 23:44:41 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,19 @@
 #define SO_LONG_H
 
 # include <stdlib.h>
+# include <unistd.h>
+# include <X11/keysym.h>
+# include <X11/X.h>
+# include <stdio.h>
 # include <sys/types.h>
 # include <sys/stat.h>
 # include <fcntl.h>
-# include <stdbool.h>
-//# include "mlx.h"
-
 #include <X11/Xlib.h>
 
 # include "../libs/get_next_line/get_next_line.h"
 # include "../libs/ft_printf/ft_printf.h"
 # include "../libs/libft/libft.h"
+# include "minilibx/mlx.h"
 
 //# define KEY_PRESS 2
 //# define CLICK_CLOSE 17
@@ -46,6 +48,7 @@
 # define IMG_SIZE 48
 # define FAILURE 1
 # define SUCCESS 0
+# define ERR -1
 
 // Error messages
 # define BER_ERR "Argument is not a correct, please provide a .ber file.\n"
@@ -60,10 +63,12 @@
 # define NO_WAY_TO_COLLECTABLES "There's no way to access all collectables, some of them closed by walls!\n"
 # define NO_WAY_TO_EXIT "There's no way to exit, the port is closed by walls!\n"
 # define MAP_NOT_SOLVABLE "This map is not solvable!\n"
+# define TITTLE "so_long_game"
 
 // Colors;
 # define RED "\033[0;31m"
 # define RESET "\033[0m"
+# define PEACH "\033[38;5;217m"
 
 typedef struct s_map
 {
@@ -86,7 +91,7 @@ typedef struct s_img
 	void	*ground;
 	void	*player;
 	void	*coin1;
-	void	*exit_1;
+	void	*exit_l;
 	int		line_height;
 	int		width;
 	int 	height;
@@ -141,5 +146,21 @@ int	check_letters(t_data *data);
 int	check_edges(int line_count, char **map);
 int	check_map(t_data *data);
 int	la_algo(t_data *data, int collect_num);
+
+void	init_images(t_data *data);
+int	int_window(t_data *data);
+void	loop_images(t_data data);
+void	destroy_images(t_data data);
+void	parse_chars(t_data *data, int width, int i, int j);
+int	render(t_data *data);
+int	handle_btn_realease(t_data *data);
+int	handle_keypress(int keysystem, t_data *data);
+int	handle_resize(t_data *data);
+void	move_msg(t_data *data);
+
+void	move_player(t_data *data, char direction);
+void	collect_coins(t_data *data, char direction);
+int		win_game(t_data *data);
+int		check_next_tile(t_data *data, char direction, char tile);
 
 #endif
