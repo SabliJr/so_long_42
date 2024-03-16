@@ -6,7 +6,7 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 19:47:14 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/15 18:59:57 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/15 22:20:31 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,19 +45,23 @@ int	check_extention(char *path)
 
 int	check_rectangle(t_data *data)
 {
-    int i;
-    size_t j;
+	int i;
+	size_t j;
+	int len;
 
-    i = 0;
-    data->map.line_len = ft_strlen(data->map.map[i]) - 1;
-    while (data->map.map[i])
-    {
-        j = 0;
-        while (data->map.map[i][j])
-            j++;
-        if (j != data->map.line_len)
-            return (FAILURE);
-        i++;
-    }
-    return (SUCCESS);
+	i = 0;
+	len = ft_strlen(data->map.map[i]);
+	if (data->map.map[i][len - 1] == '\n')
+		len--;
+	data->map.line_len = len;
+	while (data->map.map[i])
+	{
+		j = 0;
+		while (data->map.map[i][j] && data->map.map[i][j] != '\n')
+			j++;
+		if (j != data->map.line_len)
+			return (FAILURE);
+		i++;
+	}
+	return (SUCCESS);
 }
