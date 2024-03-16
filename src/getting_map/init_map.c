@@ -6,7 +6,7 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 13:03:21 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/14 18:50:39 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/16 14:29:28 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	init_map(t_data *data)
 {
+	int len;
+
+	len = ft_strlen(data->map.map[0]) - 1;
 	data->j = 0;
 	data->i = 0;
 	data->steps_count = 0;
@@ -25,5 +28,5 @@ void	init_map(t_data *data)
 	data->img.height = IMG_SIZE;
 	data->img.width = IMG_SIZE;
 	data->win_height = data->map.line_count * IMG_SIZE;
-	data->win_width = (ft_strlen(data->map.map[0] - 1) * IMG_SIZE);
+	data->win_width = (len * IMG_SIZE);
 }

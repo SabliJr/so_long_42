@@ -6,13 +6,13 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 11:45:53 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/15 16:20:22 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/16 14:36:28 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-int	get_map_lines_num(char *path);
+int		get_map_lines_num(char *path);
 void	get_input_in_map(int row, size_t cloumn, int x, t_data *data);
 void	create_map(t_data *data, char *path);
 

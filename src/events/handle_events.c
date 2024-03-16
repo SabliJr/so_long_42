@@ -6,15 +6,15 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 23:14:36 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/15 23:44:01 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/16 14:36:35 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-int	handle_btn_realease(t_data *data);
-int	handle_keypress(int keysystem, t_data *data);
-int	handle_resize(t_data *data);
+int		handle_btn_realease(t_data *data);
+int		handle_keypress(int keysystem, t_data *data);
+int		handle_resize(t_data *data);
 void	move_msg(t_data *data);
 
 int	handle_resize(t_data *data)

@@ -6,7 +6,7 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 14:20:04 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/15 16:47:59 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/16 14:37:00 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 char	**map_copy(char **map);
 t_algo	*algo_int(int collect_num);
 void	player_pos(t_data *data);
-int	map_path_checker(char **map, int i, int x, t_algo *algo);
-int	la_algo(t_data *data, int collect_num);
+int		map_path_checker(char **map, int i, int x, t_algo *algo);
+int		la_algo(t_data *data, int collect_num);
 
 char	**map_copy(char **map)
 {
@@ -68,25 +68,25 @@ int	la_algo(t_data *data, int collect_num)
 
 void	player_pos(t_data *data)
 {
-    int k;
-    int l;
+	int	k;
+	int	l;
 
-    k = 0;
-    while (data->map.map[k])
-    {
-        l = 0;
-        while (data->map.map[k][l])
-        {
-            if (data->map.map[k][l] == 'P')
-            {
-                data->i = k;
-                data->j = l;
-                return ;
-            }
-            l++;
-        }
-        k++;
-    }
+	k = 0;
+	while (data->map.map[k])
+	{
+		l = 0;
+		while (data->map.map[k][l])
+		{
+			if (data->map.map[k][l] == 'P')
+			{
+				data->i = k;
+				data->j = l;
+				return ;
+			}
+			l++;
+		}
+		k++;
+	}
 }
 
 int	map_path_checker(char **map, int i, int x, t_algo *algo)
