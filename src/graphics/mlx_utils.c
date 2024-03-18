@@ -6,7 +6,7 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 22:40:39 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/16 14:15:48 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/18 10:24:59 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,8 @@ int	init_window(t_data *data)
 	data->mlx = mlx_init();
 	if (!data->mlx)
 		return (ERR);
-	ft_printf("The window width: %d\n", data->win_width);
-	ft_printf("The window height: %d\n", data->win_height);
 	data->win = mlx_new_window(data->mlx, data->win_width, data->win_height,
 			TITTLE);
-	ft_printf("%s\n", data->win);
 	if (data->win == NULL)
 	{
 		free(data->win);

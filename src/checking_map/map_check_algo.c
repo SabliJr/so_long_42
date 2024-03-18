@@ -6,7 +6,7 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 14:20:04 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/16 14:37:00 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/18 10:19:36 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	**map_copy(char **map)
 	x = 0;
 	while (map[x])
 		x++;
-	new_map = malloc(sizeof(char *) * x + 1);
+	new_map = malloc(sizeof(char *) * (x + 1));
 	if (!new_map)
 		return (NULL);
 	x = 0;
@@ -43,7 +43,7 @@ t_algo	*algo_int(int collect_num)
 {
 	t_algo	*algo;
 
-	algo = malloc(sizeof(algo));
+	algo = malloc(sizeof(*algo));
 	if (!algo)
 		return (NULL);
 	algo->collectable = collect_num;
@@ -61,7 +61,7 @@ int	la_algo(t_data *data, int collect_num)
 	new_map = map_copy(data->map.map);
 	player_pos(data);
 	res = map_path_checker(new_map, data->i, data->j, algo);
-	free(new_map);
+	ft_free(new_map);
 	free(algo);
 	return (res);
 }
