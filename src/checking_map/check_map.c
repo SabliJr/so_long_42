@@ -6,7 +6,7 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 19:29:43 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/18 10:17:53 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/18 20:17:56 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int	check_edges(int line_count, char **map)
 		return (FAILURE);
 	while (i < line_count)
 	{
-		line_len = ft_strlen(map[0]) - 2;
+		line_len = ft_strlen(map[i]) - 2;
 		if (map[i][0] != '1' || map[i][line_len] != '1')
 			return (FAILURE);
 		i++;

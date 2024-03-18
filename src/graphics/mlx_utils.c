@@ -6,7 +6,7 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 22:40:39 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/18 10:24:59 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/18 18:05:35 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int	init_window(t_data *data)
 		free(data->win);
 		return (ERR);
 	}
-	ft_printf("We are inside inti window!\n");
 	return (SUCCESS);
 }
 
