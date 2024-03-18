@@ -6,7 +6,7 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 10:56:45 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/16 16:37:47 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/18 11:14:39 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,6 @@
 # define KEY_A 97
 # define KEY_D 100
 # define KEY_S 115
-# define LEFT_ARROW_KEY 65361
-# define UP_ARROW_KEY 65362
-# define RIGHT_ARROW_KEY 65363
-# define DOWN_ARROW_KEY 65364
 # define ESC_KEY 65307
 
 # ifndef O_DIRECTORY
@@ -55,8 +51,9 @@
 # define EDGES_ERR "This map is not correct (The edges must be walls-1-)\n"
 # define MULITPULE_EXITS_ERR "This map is invalid. it has multipule exits!\n"
 # define MAP_NOT_SOLVABLE "This map is not solvable!\n"
-# define TITTLE "so_long_game"
+# define TITTLE "so_long_game | Sabli Jr."
 
+//Colors
 # define RED "\033[0;31m"
 # define RESET "\033[0m"
 # define GREEN "\033[1;32m"
@@ -65,6 +62,7 @@
 # define WHITE "\033[1;37m"
 # define PINK "\033[38;5;206m"
 # define PEACH "\033[38;5;217m"
+
 # define FOE "assets/foe.xpm"
 # define PLAYER "assets/player.xpm"
 # define EXIT "assets/chest_unlocked.xpm"
