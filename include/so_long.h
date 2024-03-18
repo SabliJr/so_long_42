@@ -6,7 +6,7 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 10:56:45 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/16 15:39:34 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/16 16:37:47 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,7 +145,7 @@ typedef struct s_algo
 void		init_map(t_data *data);
 void		create_map(t_data *data, char *path);
 int			check_extention(char *path);
-void		error_msg(char *str);
+void		error_msg(char *str, t_data *data);
 void		init_player(t_data *data);
 void		ft_free(char **arr);
 int			check_rectangle(t_data *data);

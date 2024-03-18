@@ -6,7 +6,7 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 19:29:43 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/15 16:46:32 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/18 10:17:53 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,18 +34,12 @@ int	check_top_bottom(int row, char **map)
 
 int	check_letters(t_data *data)
 {
-	int	count_p;
-
-	count_p = 0;
 	while (data->map.map[data->i])
 	{
 		while (data->map.map[data->i][data->j])
 		{
 			if (data->map.map[data->i][data->j] == 'P')
-			{
 				data->map.players_count++;
-				count_p++;
-			}
 			else if (data->map.map[data->i][data->j] == 'C')
 				data->map.count_c++;
 			else if (data->map.map[data->i][data->j] == 'E')
@@ -76,7 +70,7 @@ int	check_edges(int line_count, char **map)
 		return (FAILURE);
 	while (i < line_count)
 	{
-		line_len = ft_strlen(map[0] - 2);
+		line_len = ft_strlen(map[0]) - 2;
 		if (map[i][0] != '1' || map[i][line_len] != '1')
 			return (FAILURE);
 		i++;
@@ -98,7 +92,7 @@ int	check_map(t_data *data)
 		while (y < len - 1)
 		{
 			if (ft_strchr("01CEP", data->map.map[x][y]) == NULL)
-				error_msg(OTHER_ERR);
+				error_msg(OTHER_ERR, data);
 			y++;
 		}
 		x++;
@@ -109,18 +103,18 @@ int	check_map(t_data *data)
 int	return_res(t_data *data)
 {
 	if (check_edges(data->map.line_count - 1, data->map.map) == FAILURE)
-		error_msg(EDGES_ERR);
+		error_msg(EDGES_ERR, data);
 	if (check_extention(data->map.path) == FAILURE)
-		error_msg(BER_ERR);
+		error_msg(BER_ERR, data);
 	if (check_letters(data) == FAILURE)
-		error_msg(CHARS_ERR);
+		error_msg(CHARS_ERR, data);
 	if (check_letters(data) == 2)
-		error_msg(PLAYER_ERR);
+		error_msg(PLAYER_ERR, data);
 	if (check_letters(data) == 3)
-		error_msg(MULITPULE_EXITS_ERR);
+		error_msg(MULITPULE_EXITS_ERR, data);
 	if (la_algo(data, data->map.count_c) == FAILURE)
-		error_msg(MAP_NOT_SOLVABLE);
+		error_msg(MAP_NOT_SOLVABLE, data);
 	if (check_rectangle(data) == FAILURE)
-		error_msg(NOT_REC_ERR);
+		error_msg(NOT_REC_ERR, data);
 	return (SUCCESS);
 }

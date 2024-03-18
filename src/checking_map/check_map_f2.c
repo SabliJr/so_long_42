@@ -6,7 +6,7 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 19:47:14 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/15 22:20:31 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/18 10:20:55 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,9 @@ int	check_extention(char *path)
 
 int	check_rectangle(t_data *data)
 {
-	int i;
-	size_t j;
-	int len;
+	int		i;
+	int		len;
+	size_t	j;
 
 	i = 0;
 	len = ft_strlen(data->map.map[i]);

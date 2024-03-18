@@ -6,7 +6,7 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 22:58:06 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/16 14:35:40 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/18 10:24:34 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,9 @@ void	parse_chars(t_data *data, int width, int i, int j)
 
 int	render(t_data *data)
 {
-	int i;
-	size_t j;
-	int width;
+	int		i;
+	int		width;
+	size_t	j;
 
 	if (data->win == NULL)
 		return (FAILURE);
@@ -47,7 +47,6 @@ int	render(t_data *data)
 	{
 		j = 0;
 		width = 0;
-
 		while (data->map.map[i][j] && data->map.map[i][j] != '\n')
 		{
 			parse_chars(data, width, i, j);
